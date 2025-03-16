@@ -4,7 +4,7 @@ import java.util.HashSet;
 import java.util.Scanner;
 import java.util.Set;
 
-public class Solution {
+public class Main {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		String S = sc.nextLine();
@@ -12,11 +12,10 @@ public class Solution {
 		
 		for(int i = 1; i<=S.length(); i++) {
 			for(int j = 0; j<=S.length() - i; j++) {
-				System.out.print(S.substring(j,i+j) + " ");
+				set1.add(S.substring(j,i+j)); // 집합인 hash에 집어넣어 자동으로 중복 제
 			}
-			System.out.println();
 		}
-		
+		System.out.println(set1.size()); // set1의 크기가 바로 부분 문자열의 개수이다.
 		sc.close();
 	}
 }
